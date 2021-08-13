@@ -20,6 +20,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .pause, target: self, action: #selector(showScore))
+        
         countries += ["Estonia", "France", "Germany", "Ireland", "Italy", "Monaco", "Nigeria", "Poland", "Russia", "Spain", "UK", "US"]
         button1.layer.borderWidth = 1
         button2.layer.borderWidth = 1
@@ -41,13 +43,15 @@ class ViewController: UIViewController {
             present(ac, animated: true)
             score = 0
             answeredQuestions = 0
+        } else {
+            countries.shuffle()
+            correctAnswer = Int.random(in: 0...2)
+            button1.setImage(UIImage(named: countries[0]), for: .normal)
+            button2.setImage(UIImage(named: countries[1]), for: .normal)
+            button3.setImage(UIImage(named: countries[2]), for: .normal)
+            title =  countries[correctAnswer].uppercased() + " - SCORE: \(score)"
         }
-        countries.shuffle()
-        correctAnswer = Int.random(in: 0...2)
-        button1.setImage(UIImage(named: countries[0]), for: .normal)
-        button2.setImage(UIImage(named: countries[1]), for: .normal)
-        button3.setImage(UIImage(named: countries[2]), for: .normal)
-        title =  countries[correctAnswer].uppercased() + " - SCORE: \(score)"
+        
     }
     
     
@@ -67,6 +71,15 @@ class ViewController: UIViewController {
             
         }
         
+    }
+    
+    @objc func showScore(){
+        let titlePause = "Paused"
+        let ac = UIAlertController(title: titlePause, message: "Your current score is \(score)", preferredStyle: .alert)
+        
+        ac.addAction(UIAlertAction(title: "Continue", style: .cancel, handler: nil))
+        
+        present(ac, animated: true)
     }
     
 
