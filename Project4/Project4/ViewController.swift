@@ -27,14 +27,16 @@ class ViewController: UIViewController,
         let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let refresh = UIBarButtonItem(barButtonSystemItem: .refresh, target: webView, action: #selector(webView.reload))
         
+        let goBack = UIBarButtonItem(title: "Back", style: .plain, target: webView, action: #selector(webView.goBack))
+        let goForward = UIBarButtonItem(title: "Forward", style: .plain, target: webView, action: #selector(webView.goForward))
         progressView = UIProgressView(progressViewStyle: .default)
         progressView.sizeToFit()
         let progressButton = UIBarButtonItem(customView: progressView)
-        toolbarItems = [progressButton, spacer, refresh]
+        toolbarItems = [progressButton, spacer, goBack, goForward, refresh]
         navigationController?.isToolbarHidden = false
         
         webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
-        let url = URL(string: "https://" + webSites[0])!
+        let url = URL(string: "https://" + webSites[1])!
         webView.load(URLRequest(url: url))
         webView.allowsBackForwardNavigationGestures = true
     }
@@ -44,6 +46,7 @@ class ViewController: UIViewController,
         for website in webSites {
             ac.addAction(UIAlertAction(title: website, style: .default, handler: openPage))
         }
+        ac.addAction(UIAlertAction(title: "facebook.com", style: .default, handler: openPage))
         ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         ac.popoverPresentationController?.barButtonItem = self.navigationItem.rightBarButtonItem
         present(ac, animated: true)
@@ -76,7 +79,15 @@ class ViewController: UIViewController,
                     return
                 }
             }
+            let titlePause = "Blocked"
+            let ac = UIAlertController(title: titlePause, message: "Not alowed", preferredStyle: .alert)
+            
+            ac.addAction(UIAlertAction(title: "Continue", style: .cancel, handler: nil))
+            
+            present(ac, animated: true)
         }
+       
+        
         decisionHandler(.cancel)
     }
 }

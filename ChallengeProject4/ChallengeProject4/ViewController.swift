@@ -17,7 +17,7 @@ class ViewController: UITableViewController {
         let items = try! fm.contentsOfDirectory(atPath: path)
         print("hello")
         for flag in items {
-            if flag.hasPrefix("nssl"){
+            if flag.hasSuffix("png"){
                 flags.append(flag)
             }
         }

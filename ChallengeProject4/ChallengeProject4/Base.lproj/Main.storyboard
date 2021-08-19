@@ -45,13 +45,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cr5-l4-q78">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Cr5-l4-q78">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="It4-Xa-K9d"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Cr5-l4-q78" firstAttribute="top" secondItem="NQE-2Z-hgU" secondAttribute="topMargin" constant="-44" id="cuE-Aj-AiR"/>
+                            <constraint firstItem="Cr5-l4-q78" firstAttribute="centerY" secondItem="NQE-2Z-hgU" secondAttribute="centerY" id="nHa-5M-Wiy"/>
+                            <constraint firstItem="Cr5-l4-q78" firstAttribute="leading" secondItem="It4-Xa-K9d" secondAttribute="leading" id="unn-V0-xVZ"/>
+                            <constraint firstItem="Cr5-l4-q78" firstAttribute="centerX" secondItem="NQE-2Z-hgU" secondAttribute="centerX" id="z80-mT-ZRd"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="Cr5-l4-q78" id="sh9-iG-6pA"/>
