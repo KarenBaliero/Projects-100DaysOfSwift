@@ -8,7 +8,7 @@ https://www.hackingwithswift.com/100
 
 Type                | Number  | Completion
 :---                |  :---:  |   :---:
-Projects            |  7 / 30 | 23%
+Projects            |  8 / 30 | 26%
 Challenges          | ?? / 90 | ??%
 Milestone Projects  | 3 / 10 | 30%
 Core Graphics redux |  0 / 1  | 100%
@@ -31,4 +31,4 @@ Projects / Topics                                                               
 [Project 6](07-Project6) - *Auto Layout* <br/>(with challenges)                                       <br/><sub> Auto Layout, Constraints, Visual Format Language                        </sub> | ![screen1](07-Project6/screenshots/small/screen01.png) ![screen2](07-Project6/screenshots/small/screen02.png) |
 [Milestone projects 4-6](08-Milestone-Projects4-6) - *Shopping List*                                 <br/><sub>                                                                         </sub> | ![screen1](08-Milestone-Projects4-6/screenshots/small/screen01.png) |
 [Project 7](09-Project7) - *Whitehouse Petitions* <br/>(with challenges)                                         <br/><sub> UITabBarController, JSON, Data, Codable                                 </sub> | ![screen1](09-Project7/screenshots/small/screen01.png) ![screen2](09-Project7/screenshots/small/screen02.png) |
-[Project 8](10-Project8) - *7 Swifty Words* <br/>(with challenges)                                         <br/><sub> UI in code, Text alignment, Layout Margins, UIFont                      </sub> | ![screen1](10-Project8/screenshots/small/screen01.png) |
+[Project 8](Project8) - *7 Swifty Words* <br/>(with challenges)                                         <br/><sub> UI in code, Text alignment, Layout Margins, UIFont                      </sub> | ![screen1](Project8/screenshots/small/screen01.png) |
