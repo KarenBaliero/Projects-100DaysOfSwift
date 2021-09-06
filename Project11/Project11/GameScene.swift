@@ -24,6 +24,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             }
         }
     }
+    let ballNames = ["ballRed", "ballBlue", "ballCyan", "ballGreen", "ballGrey", "ballPurple", "ballYellow"]
     
     override func didMove(to view: SKView) {
         let background = SKSpriteNode(imageNamed: "background")
@@ -81,13 +82,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 box.physicsBody?.isDynamic = false
                 addChild(box)
             } else{
-                let ball = SKSpriteNode(imageNamed: "ballRed")
+                let ballName = ballNames.randomElement()!
+                let ball = SKSpriteNode(imageNamed: ballName)
                 ball.physicsBody = SKPhysicsBody(circleOfRadius: ball.size.width / 2.0)
                 ball.physicsBody?.restitution = 0.4
                 //location.y = 0
                 //which node should i bump into
                 //which collisions you want to know about
                 //tell about the collisions that happen
+                //collisionBitMask determines what objects a node bounces off, and contactTestBitMask determines which collisions are reported to us.
                 ball.physicsBody?.contactTestBitMask = ball.physicsBody?.collisionBitMask ?? 0
                 ball.position = location
                 ball.position.y = 768
@@ -150,6 +153,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func destroy(ball: SKNode){
+        if let fireParticles = SKEmitterNode(fileNamed: "FireParticles"){
+            fireParticles.position = ball.position
+            addChild(fireParticles)
+        }
         ball.removeFromParent()
     }
     
