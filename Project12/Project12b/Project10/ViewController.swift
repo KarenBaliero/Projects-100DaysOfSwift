@@ -60,6 +60,7 @@ class ViewController: UICollectionViewController, UIImagePickerControllerDelegat
         ac.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         present(ac, animated: true)
     }
+    
     func selectPicker(action: UIAlertAction){
         let picker = UIImagePickerController()
         picker.allowsEditing = true
