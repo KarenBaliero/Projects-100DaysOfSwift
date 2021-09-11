@@ -15,6 +15,7 @@
 		E890C8A926EAFCA500601FE0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E890C8A726EAFCA500601FE0 /* LaunchScreen.storyboard */; };
 		E890C8B226EB05E400601FE0 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E890C8B126EB05E400601FE0 /* DetailViewController.swift */; };
 		E890C8B526EB077900601FE0 /* Picture.swift in Sources */ = {isa = PBXBuildFile; fileRef = E890C8B426EB077900601FE0 /* Picture.swift */; };
+		E8E6038926ED4D9600CD3CDC /* PictureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E6038826ED4D9600CD3CDC /* PictureCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		E890C8AA26EAFCA500601FE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E890C8B126EB05E400601FE0 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		E890C8B426EB077900601FE0 /* Picture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picture.swift; sourceTree = "<group>"; };
+		E8E6038826ED4D9600CD3CDC /* PictureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				E890C89E26EAFCA300601FE0 /* SceneDelegate.swift */,
 				E890C8A026EAFCA300601FE0 /* ViewController.swift */,
 				E890C8B426EB077900601FE0 /* Picture.swift */,
+				E8E6038826ED4D9600CD3CDC /* PictureCell.swift */,
 				E890C8B126EB05E400601FE0 /* DetailViewController.swift */,
 				E890C8A226EAFCA300601FE0 /* Main.storyboard */,
 				E890C8A526EAFCA500601FE0 /* Assets.xcassets */,
@@ -145,6 +148,7 @@
 			files = (
 				E890C8A126EAFCA300601FE0 /* ViewController.swift in Sources */,
 				E890C8B526EB077900601FE0 /* Picture.swift in Sources */,
+				E8E6038926ED4D9600CD3CDC /* PictureCell.swift in Sources */,
 				E890C89D26EAFCA300601FE0 /* AppDelegate.swift in Sources */,
 				E890C89F26EAFCA300601FE0 /* SceneDelegate.swift in Sources */,
 				E890C8B226EB05E400601FE0 /* DetailViewController.swift in Sources */,

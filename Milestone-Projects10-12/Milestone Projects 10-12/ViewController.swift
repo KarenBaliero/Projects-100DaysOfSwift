@@ -14,7 +14,7 @@ class ViewController: UITableViewController, UIImagePickerControllerDelegate, UI
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewPicture))
-        
+        self.tableView.rowHeight = 100
 //        let defaults = UserDefaults.standard
 //
 //        if let savedPictures = defaults.object(forKey: "pictures") as? Data {
@@ -30,11 +30,18 @@ class ViewController: UITableViewController, UIImagePickerControllerDelegate, UI
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Picture", for: indexPath)
-        let picture = pictures[indexPath.row]
-        cell.textLabel?.text = picture.name
+        //let picture = pictures[indexPath.row]
+        //cell.textLabel?.text = picture.name
         
         //let path = getDocumentDirectory().appendingPathComponent(picture.imagePath)
-    
+        if let cell = cell as? PictureCell {
+            cell.label?.text = pictures[indexPath.row].name
+            let path = pictures[indexPath.row].imagePath
+            cell.pictureView?.image = UIImage(contentsOfFile: path)
+            cell.pictureView?.layer.borderColor = UIColor.black.cgColor
+            cell.pictureView?.layer.borderWidth = 0.1
+            cell.pictureView?.layer.cornerRadius = 5
+        }
         
         return cell
     }
