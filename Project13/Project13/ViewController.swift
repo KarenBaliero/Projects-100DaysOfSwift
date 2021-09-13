@@ -12,9 +12,18 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var intensity: UISlider!
+    @IBOutlet var radius: UISlider!
+    @IBOutlet var center: UISlider!
+    @IBOutlet var scale: UISlider!
+    
     var currentImage: UIImage!
     var context: CIContext!
-    var currentFilter: CIFilter!
+    var currentFilter: CIFilter! {
+        didSet {
+            changeFilterButton.setTitle(currentFilter.name, for: .normal)
+        }
+    }
+    @IBOutlet var changeFilterButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +50,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
 
     @IBAction func changeFilter(_ sender: UIButton) {
+        
         let ac = UIAlertController(title: "Choose Filter", message: nil, preferredStyle: .actionSheet)
         ac.addAction(UIAlertAction(title: "CIBumpDistortion", style: .default, handler: setFilter))
         ac.addAction(UIAlertAction(title: "CIGaussianBlur", style: .default, handler: setFilter))
@@ -55,13 +65,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             popoverController.sourceRect = sender.bounds
         }
         present(ac, animated: true)
+        
     }
     
     func setFilter(action: UIAlertAction) {
+        
         print(action.title!)
         guard currentImage != nil else {return}
         guard let actionTitle = action.title else {return}
-        
         currentFilter = CIFilter(name: actionTitle)
         
         let beginImage = CIImage(image: currentImage)
@@ -72,28 +83,45 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     @IBAction func save(_ sender: Any) {
-        guard let image = imageView.image else {return}
+        guard let image = imageView.image else {
+            let ac = UIAlertController(title: "Save error", message: "No image to save", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default))
+            present(ac, animated: true)
+            return
+        }
         UIImageWriteToSavedPhotosAlbum(image, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
     }
     @IBAction func intensityChanged(_ sender: Any) {
         applyProcessing()
     }
     
+    @IBAction func radiusChanged(_ sender: Any) {
+        applyProcessing()
+    }
+    
+    @IBAction func centerChanged(_ sender: Any) {
+        applyProcessing()
+    }
+    
+    @IBAction func scaleChanged(_ sender: Any) {
+        applyProcessing()
+    }
+    
     func applyProcessing() {
         let inputKeys = currentFilter.inputKeys
+        
+        if inputKeys.contains(kCIInputRadiusKey){
+            currentFilter.setValue(radius.value * 200, forKey: kCIInputRadiusKey)
+        }
         
         if inputKeys.contains(kCIInputIntensityKey){
             currentFilter.setValue(intensity.value, forKey: kCIInputIntensityKey)
         }
-        
-        if inputKeys.contains(kCIInputRadiusKey){
-            currentFilter.setValue(intensity.value * 200, forKey: kCIInputRadiusKey)
-        }
         if inputKeys.contains(kCIInputScaleKey){
-            currentFilter.setValue(intensity.value * 10, forKey: kCIInputScaleKey)
+            currentFilter.setValue(scale.value * 10, forKey: kCIInputScaleKey)
         }
         if inputKeys.contains(kCIInputCenterKey){
-            currentFilter.setValue(CIVector(x: currentImage.size.width/2, y: currentImage.size.height/2), forKey: kCIInputCenterKey)
+            currentFilter.setValue(CIVector(x: (CGFloat(center.value) * currentImage.size.width/2), y: CGFloat(center.value) * currentImage.size.height/2), forKey: kCIInputCenterKey)
         }
         
         guard let outputImage = currentFilter.outputImage else {return}
