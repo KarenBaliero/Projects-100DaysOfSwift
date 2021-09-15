@@ -8,13 +8,13 @@ https://www.hackingwithswift.com/100
 
 Type                | Number  | Completion
 :---                |  :---:  |   :---:
-Projects            |  11 / 30 | 36%
+Projects            |  14 / 30 | 36%
 Challenges          | ?? / 90 | ??%
 Milestone Projects  | 3 / 10 | 30%
 Core Graphics redux |  0 / 1  | 100%
 
 ## Notes
-- This is 100 days of **Swift**. For 100 days of **SwiftUI**, look [here](https://github.com/clarknt/100-days-of-swiftui). 
+- This is 100 days of **Swift**.
 
 ## Preview
 
@@ -38,3 +38,5 @@ Projects / Topics                                                               
 [Project 11](Project11) - *Pachinko*  <br/>(with challenges)                                      <br/><sub> SpriteKit, Nodes, UITouch, Physics Body, SKAction, Collisions, Emitters </sub> | ![screen1](Project11/screenshots/small/screen01.png) ![screen2](Project11/screenshots/small/screen02.png) |
 [Project 12](Project12) - *User Defaults* <br/>(with challenges)  <br/>(base: project 10)                                   <br/><sub> UserDefaults, JSON, NSCoding, Codable                                            </sub> | ![screen1](Project12/screenshots/small/screen01.png) ![screen2](Project12/screenshots/small/screen02.png) |
 [Milestone projects 10-12](Milestone-Projects10-12) - *Photo captions*                             <br/><sub>                                                                         </sub> | ![screen1](Milestone-Projects10-12/screenshots/small/screen01.png) ![screen2](Milestone-Projects10-12/screenshots/small/screen02.png) |
+[Project 13](Project13) - *Instafilter* <br/>(with challenges)                                       <br/><sub> UISlider, UIImagePickerController, CIContext, CIFilter, Saving photos   </sub> | ![screen1](Project13/screenshots/small/screen01.png) ![screen2](Project13/screenshots/small/screen02.png) |
+[Project 14](Project14) - *Whack-a-Penguin* <br/>(with challenges)                                       <br/><sub> SKCropNode, SKTexture, SKAction                                         </sub> | ![screen1](Project14/screenshots/small/screen01.png) ![screen2](Project14/screenshots/small/screen02.png) |

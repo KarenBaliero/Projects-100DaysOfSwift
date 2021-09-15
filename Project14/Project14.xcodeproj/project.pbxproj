@@ -14,6 +14,9 @@
 		E8379A5926F1618700A9A660 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8379A5726F1618700A9A660 /* Main.storyboard */; };
 		E8379A5B26F1618800A9A660 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8379A5A26F1618800A9A660 /* Assets.xcassets */; };
 		E8379A6526F1645200A9A660 /* WhackSlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8379A6426F1645200A9A660 /* WhackSlot.swift */; };
+		E89D35F826F291A0000D778F /* whack.caf in Resources */ = {isa = PBXBuildFile; fileRef = E8379A6226F1624600A9A660 /* whack.caf */; };
+		E89D35F926F291A2000D778F /* whackBad.caf in Resources */ = {isa = PBXBuildFile; fileRef = E8379A6326F1624600A9A660 /* whackBad.caf */; };
+		E89D35FD26F295A4000D778F /* GameOver.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E89D35FC26F295A4000D778F /* GameOver.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,7 @@
 		E8379A6226F1624600A9A660 /* whack.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = whack.caf; sourceTree = "<group>"; };
 		E8379A6326F1624600A9A660 /* whackBad.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = whackBad.caf; sourceTree = "<group>"; };
 		E8379A6426F1645200A9A660 /* WhackSlot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhackSlot.swift; sourceTree = "<group>"; };
+		E89D35FC26F295A4000D778F /* GameOver.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = GameOver.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,10 +72,19 @@
 				E8379A5726F1618700A9A660 /* Main.storyboard */,
 				E8379A5A26F1618800A9A660 /* Assets.xcassets */,
 				E8379A5C26F1618800A9A660 /* Info.plist */,
+				E89D35F726F29153000D778F /* Content */,
+			);
+			path = Project14;
+			sourceTree = "<group>";
+		};
+		E89D35F726F29153000D778F /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				E89D35FC26F295A4000D778F /* GameOver.mp3 */,
 				E8379A6226F1624600A9A660 /* whack.caf */,
 				E8379A6326F1624600A9A660 /* whackBad.caf */,
 			);
-			path = Project14;
+			path = Content;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,9 +144,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E89D35F926F291A2000D778F /* whackBad.caf in Resources */,
 				E8379A5926F1618700A9A660 /* Main.storyboard in Resources */,
 				E8379A5026F1618700A9A660 /* GameScene.sks in Resources */,
 				E8379A5B26F1618800A9A660 /* Assets.xcassets in Resources */,
+				E89D35FD26F295A4000D778F /* GameOver.mp3 in Resources */,
+				E89D35F826F291A0000D778F /* whack.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
