@@ -58,6 +58,22 @@ class ViewController: UIViewController {
     @IBAction func buttonTapped(_ sender: UIButton) {
         var title: String
         answeredQuestions+=1
+        //UIView.animate(withDuration: 2, delay: 0, options: [], animations: {
+//        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 4, options: [], animations: {
+//            sender.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+//        },
+//        completion: { _ in
+//            UIView.animate(withDuration: 0.5,  delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 4, options: [], animations: {
+//                sender.transform = .identity
+//            })
+//        })
+        sender.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 5, options: [], animations: {
+            sender.transform = .identity
+        },
+        completion: { Void in() })
+
+        
         if sender.tag == correctAnswer{
             score+=1
             askQuestion()
@@ -70,6 +86,9 @@ class ViewController: UIViewController {
             present(ac, animated: true)
             
         }
+        
+        
+        
         
     }
     
