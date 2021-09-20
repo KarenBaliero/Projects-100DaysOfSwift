@@ -41,6 +41,40 @@
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="125.89285714285714"/>
         </scene>
+        <!--Web View Controller-->
+        <scene sceneID="yh2-gc-w5M">
+            <objects>
+                <viewController storyboardIdentifier="WebViewController" id="bOg-sR-NSZ" customClass="WebViewController" customModule="Project16" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VSp-4s-lE8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CGq-DW-uLw">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="iKu-eD-CnQ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="CGq-DW-uLw" firstAttribute="centerX" secondItem="VSp-4s-lE8" secondAttribute="centerX" id="REd-k3-UAe"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="CGq-DW-uLw" secondAttribute="bottom" constant="-34" id="T4K-22-pFX"/>
+                            <constraint firstItem="CGq-DW-uLw" firstAttribute="leading" secondItem="iKu-eD-CnQ" secondAttribute="leading" id="VJc-U4-Lhy"/>
+                            <constraint firstItem="CGq-DW-uLw" firstAttribute="top" secondItem="iKu-eD-CnQ" secondAttribute="top" id="hrz-ii-0Mi"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="CGq-DW-uLw" id="J7p-qA-6VS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q3O-AL-ZyQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2073.913043478261" y="125.89285714285714"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="sXT-uu-iP8">
             <objects>
