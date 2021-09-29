@@ -19,6 +19,8 @@
 		E8721DAC27015EC6002C0163 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8721DAA27015EC6002C0163 /* MainInterface.storyboard */; };
 		E8721DB027015EC6002C0163 /* Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E8721DA127015EC5002C0163 /* Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		E8721DB62701621D002C0163 /* Action.js in Resources */ = {isa = PBXBuildFile; fileRef = E8721DB52701621D002C0163 /* Action.js */; };
+		E8ED9D6B2703F066009DC989 /* Script Examples.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8ED9D6A2703F066009DC989 /* Script Examples.swift */; };
+		E8ED9D6D2703F278009DC989 /* UserScript.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8ED9D6C2703F278009DC989 /* UserScript.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		E8721DAB27015EC6002C0163 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		E8721DAD27015EC6002C0163 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E8721DB52701621D002C0163 /* Action.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Action.js; sourceTree = "<group>"; };
+		E8ED9D6A2703F066009DC989 /* Script Examples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Script Examples.swift"; sourceTree = "<group>"; };
+		E8ED9D6C2703F278009DC989 /* UserScript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserScript.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +132,8 @@
 			children = (
 				E8721DA627015EC6002C0163 /* Media.xcassets */,
 				E8721DA827015EC6002C0163 /* ActionViewController.swift */,
+				E8ED9D6C2703F278009DC989 /* UserScript.swift */,
+				E8ED9D6A2703F066009DC989 /* Script Examples.swift */,
 				E8721DAA27015EC6002C0163 /* MainInterface.storyboard */,
 				E8721DAD27015EC6002C0163 /* Info.plist */,
 				E8721DB52701621D002C0163 /* Action.js */,
@@ -249,6 +255,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8ED9D6D2703F278009DC989 /* UserScript.swift in Sources */,
+				E8ED9D6B2703F066009DC989 /* Script Examples.swift in Sources */,
 				E8721DA927015EC6002C0163 /* ActionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

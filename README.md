@@ -8,7 +8,7 @@ https://www.hackingwithswift.com/100
 
 Type                | Number  | Completion
 :---                |  :---:  |   :---:
-Projects            |  18 / 30 | 36%
+Projects            |  19 / 30 | 36%
 Challenges          | ?? / 90 | ??%
 Milestone Projects  | 3 / 10 | 30%
 Core Graphics redux |  0 / 1  | 100%
@@ -45,5 +45,5 @@ Projects / Topics                                                               
 [Project 16](Project16) - *Capital Cities* <br/>(with challenges)                                       <br/><sub> MapKit, MKMapView, MKAnnotation, CLLocationCoordinate2D                  </sub> | ![screen1](Project16/screenshots/small/screen01.png) ![screen2](Project16/screenshots/small/screen02.png) ![screen"](Project16/screenshots/small/screen03.png) |
 [Project 17](22-Project17) - *Space Race* <br/>(with challenges)                                       <br/><sub> Collisions, Timer, Linear / Angular damping                             </sub> | ![screen1](Project17/screenshots/small/screen01.png) ![screen2](Project17/screenshots/small/screen02.png) |
 [Project 18](Project18) - *Debugging*                                                         <br/><sub> Debugging                                                               </sub> | No screenshot |
-
 [Milestone projects 16-18](Milestone-16-18) - *Shooting Gallery*                             <br/><sub>                                                                         </sub> | ![screen1](Milestone-16-18/screenshots/small/screen01.png)|
+[Project 19](Project19) - *Javascript Injection* <br/>(with challenges)                                       <br/><sub> Safari Extensions, NSExtensionItem, UITextView, NotificationCenter      </sub> | ![screen1](Project19/screenshots/small/screen01.png) ![screen2](Project19/screenshots/small/screen02.png) ![screen3](Project19/screenshots/small/screen03.png) ![screen4](Project19/screenshots/small/screen04.png) |
