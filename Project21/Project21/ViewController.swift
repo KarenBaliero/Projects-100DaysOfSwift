@@ -13,7 +13,11 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Register", style: .plain, target: self, action: #selector(registerLocal))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Schedule", style: .plain, target: self, action: #selector(scheduleLocal))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Schedule", style: .plain, target: self, action: #selector(firstSchedule))
+    }
+    
+    @objc func firstSchedule() {
+        scheduleLocal(delaySeconds: 5)
     }
     
     @objc func registerLocal() {
@@ -27,7 +31,7 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
         }
     }
     
-    @objc func scheduleLocal(){
+    @objc func scheduleLocal(delaySeconds: TimeInterval){
         registerCategories()
         
         let center = UNUserNotificationCenter.current()
@@ -45,7 +49,7 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
         dateComponents.minute = 30
         
         //let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: delaySeconds, repeats: false)
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
         center.add(request)
     }
@@ -55,7 +59,10 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
         center.delegate = self
         
         let show = UNNotificationAction(identifier: "show", title: "Tell me more", options: .foreground)
-        let category = UNNotificationCategory(identifier: "alarm", actions: [show], intentIdentifiers: [])
+        
+        let delay = UNNotificationAction(identifier: "delay", title: "Remind me later", options: .authenticationRequired)
+        
+        let category = UNNotificationCategory(identifier: "alarm", actions: [delay, show], intentIdentifiers: [])
         
         center.setNotificationCategories([category])
     }
@@ -65,15 +72,29 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
         // pull out the buried userInfo dictionary
         let userInfo = response.notification.request.content.userInfo
         //fizzbuzz
+        print(response.actionIdentifier)
         if let customData = userInfo["customData"] as? String{
             print("Custom data received: \(customData)")
             
             switch response.actionIdentifier {
             case UNNotificationDefaultActionIdentifier:
+                let ac = UIAlertController(title: "Default", message: "The user just clicked", preferredStyle: .alert)
+                ac.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                present(ac, animated: true)
                 //the user swiped to unlock
                 print("Defaul identifier")
             case "show":
+                let ac = UIAlertController(title: "Show more info", message: "The user clicked in show more info", preferredStyle: .alert)
+                ac.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                present(ac, animated: true)
                 print("Show more information...")
+            case "delay":
+                scheduleLocal(delaySeconds: 86400)
+                let ac = UIAlertController(title: "Delay", message: "The user asked to remind later", preferredStyle: .alert)
+                ac.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                present(ac, animated: true)
+                
+                
             default:
                 break
             }
